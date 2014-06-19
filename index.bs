@@ -202,7 +202,8 @@ Tab Stop Rules</h2>
 
   The following rules should be followed when rendering content that contains one or more tab characters (U+0009).
 
-  basic rules (note, these rules extend the basic tab stop behaviour as defined in http://dev.w3.org/csswg/css-text-3/#white-space-phase-2):
+  <h3>basic rules</h3>
+  <i>(note, these rules extend the basic tab stop behaviour as defined in http://dev.w3.org/csswg/css-text-3/#white-space-phase-2)</i>
   <ol>
   <li> tab positions are defined as positions on each text line of a block container</li>
   <li> tab positions are defined for the block container by 'tab-stops-positions'</li>
@@ -213,7 +214,7 @@ Tab Stop Rules</h2>
   <li> if the tab-stop in question has an alignment set, the text at that tap-stop will flow in the direction of said alignment.</li>
   </ol>
 
-  rules for alignment:
+  <h3>rules for alignment</h3>
   TODO: "grow" is not the right word here... reword
   <ol>
   <li> text for a center aligned tab-stop should grow in both directions from the tab-stop position</li>
@@ -223,3 +224,6 @@ Tab Stop Rules</h2>
   <li> if text reaches the right end of the container, it should wrap to the next line</li>
   <li> standard wrap algorithms apply, thus if the text has now white-spaces, it should wrap at the tab character</li>
   </ol>
+
+  <h3>rules for leaders</h3>
+  <i>See "http://dev.w3.org/csswg/css-gcpm/#rendering-leaders"</i>

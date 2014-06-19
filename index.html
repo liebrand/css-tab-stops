@@ -132,6 +132,10 @@ on screen, on paper, in speech, etc.</p>
 	<li><a href=#tab-stops-leaders><span class=secno>4</span> Tab Stop leaders: the <span class=property data-link-type=propdesc title=tab-stops-leaders>tab-stops-leaders</span> property</a>
 	<li><a href=#tab-stops><span class=secno>5</span> Shorthand property: <span class=property data-link-type=propdesc title=tab-stops>tab-stops</span></a>
 	<li><a href="#tab stop rules"><span class=secno>6</span> Tab Stop Rules</a>
+		<ul class=toc>
+		<li><a href=#basic-rules><span class=secno>6.1</span>basic rules</a>
+		<li><a href=#rules-for-alignment><span class=secno>6.2</span>rules for alignment</a>
+		<li><a href=#rules-for-leaders><span class=secno>6.3</span>rules for leaders</a></ul>
 	<li><a href=#conformance><span class=secno></span> Conformance</a>
 		<ul class=toc>
 		<li><a href=#conventions><span class=secno></span> Document conventions</a>
@@ -274,7 +278,8 @@ Tab Stop Rules</span><a class=self-link href=#tab%20stop%20rules></a></h2>
 
 <p>The following rules should be followed when rendering content that contains one or more tab characters (U+0009).</p>
 
-<p>basic rules (note, these rules extend the basic tab stop behaviour as defined in http://dev.w3.org/csswg/css-text-3/#white-space-phase-2):
+  <h3 class="heading settled heading" data-level=6.1 id=basic-rules><span class=secno>6.1 </span><span class=content>basic rules</span><a class=self-link href=#basic-rules></a></h3>
+  <i data-link-type=dfn title="(note, these rules extend the basic tab stop behaviour as defined in http://dev.w3.org/csswg/css-text-3/#white-space-phase-2)">(note, these rules extend the basic tab stop behaviour as defined in http://dev.w3.org/csswg/css-text-3/#white-space-phase-2)</i>
   <ol>
   <li> tab positions are defined as positions on each text line of a block container</li>
   <li> tab positions are defined for the block container by <a class=property data-link-type=propdesc href=#propdef-tab-stops-positions0 title=tab-stops-positions>tab-stops-positions</a></li>
@@ -283,9 +288,9 @@ Tab Stop Rules</span><a class=self-link href=#tab%20stop%20rules></a></h2>
   <li> at EACH tab character, the remaining text on the line will be rendered at "the next available" tab position</li>
   <li> if the tab-stop in question has a leader string set, the space between the previous text and the moved text is filled by repeating the leader string pattern</li>
   <li> if the tab-stop in question has an alignment set, the text at that tap-stop will flow in the direction of said alignment.</li>
-  </ol><p></p>
+  </ol>
 
-<p>rules for alignment:
+  <h3 class="heading settled heading" data-level=6.2 id=rules-for-alignment><span class=secno>6.2 </span><span class=content>rules for alignment</span><a class=self-link href=#rules-for-alignment></a></h3>
   TODO: "grow" is not the right word here... reword
   <ol>
   <li> text for a center aligned tab-stop should grow in both directions from the tab-stop position</li>
@@ -294,7 +299,10 @@ Tab Stop Rules</span><a class=self-link href=#tab%20stop%20rules></a></h2>
   <li> when text grows to the right and it reach existing text, that text will be pushed to the right. This can mean that it automatically moves to the next available tab stop (this is standard behaviour because of basic rule 4 &amp; 5 above; the tab character effectively gets moved beyond its original tab stop)</li>
   <li> if text reaches the right end of the container, it should wrap to the next line</li>
   <li> standard wrap algorithms apply, thus if the text has now white-spaces, it should wrap at the tab character</li>
-  </ol><p></p>
+  </ol>
+
+  <h3 class="heading settled heading" data-level=6.3 id=rules-for-leaders><span class=secno>6.3 </span><span class=content>rules for leaders</span><a class=self-link href=#rules-for-leaders></a></h3>
+  <i data-link-type=dfn title='see "http://dev.w3.org/csswg/css-gcpm/#rendering-leaders"'>See "http://dev.w3.org/csswg/css-gcpm/#rendering-leaders"</i>
 
 <h2 class="no-ref no-num heading settled heading" id=conformance><span class=content>
 Conformance</span><a class=self-link href=#conformance></a></h2>
