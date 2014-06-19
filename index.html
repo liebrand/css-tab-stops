@@ -73,7 +73,7 @@
 </p>
   <h1 class="p-name no-ref" id=title>CSS Tab Stops support</h1>
   <h2 class="no-num no-toc no-ref heading settled heading" id=subtitle><span class=content>Editor’s Draft,
-    <span class=dt-updated><span class=value-title title=20140618>18 June 2014</span></span></span></h2>
+    <span class=dt-updated><span class=value-title title=20140619>19 June 2014</span></span></span></h2>
   <div data-fill-with=spec-metadata><dl><dt>This version:<dd><a class=u-url href=http://dev.w3.org/csswg/css-tab-stops/>http://dev.w3.org/csswg/css-tab-stops/</a><dt>Latest version:<dd><a href=http://www.w3.org/TR/css-tab-stops/>http://www.w3.org/TR/css-tab-stops/</a><dt>Editor’s Draft:<dd><a href=http://dev.w3.org/csswg/css-tab-stops/>http://dev.w3.org/csswg/css-tab-stops/</a>
     <dt>Feedback:</dt>
         <dd><a href="mailto:www-style@w3.org?subject=%5Bcss-tab-stops%5D%20feedback">www-style@w3.org</a>
@@ -132,9 +132,6 @@ on screen, on paper, in speech, etc.</p>
 	<li><a href=#tab-stops-leaders><span class=secno>4</span> Tab Stop leaders: the <span class=property data-link-type=propdesc title=tab-stops-leaders>tab-stops-leaders</span> property</a>
 	<li><a href=#tab-stops><span class=secno>5</span> Shorthand property: <span class=property data-link-type=propdesc title=tab-stops>tab-stops</span></a>
 	<li><a href="#tab stop rules"><span class=secno>6</span> Tab Stop Rules</a>
-	<li><a href=#sample-topic><span class=secno>7</span> Sample section</a>
-		<ul class=toc>
-		<li><a href=#the-display-model><span class=secno>7.1</span> Internal display model: the <span class=property data-link-type=propdesc title=display-inside>display-inside</span> property</a></ul>
 	<li><a href=#conformance><span class=secno></span> Conformance</a>
 		<ul class=toc>
 		<li><a href=#conventions><span class=secno></span> Document conventions</a>
@@ -147,8 +144,7 @@ on screen, on paper, in speech, etc.</p>
 		<li><a href=#normative><span class=secno></span> Normative References</a>
 		<li><a href=#informative><span class=secno></span> Informative References</a></ul>
 	<li><a href=#index><span class=secno></span> Index</a>
-	<li><a href=#property-index><span class=secno></span> Property index</a>
-	<li><a href=#issues-index><span class=secno></span>Issues Index</a></ul></div>
+	<li><a href=#property-index><span class=secno></span> Property index</a></ul></div>
 
 
 
@@ -163,7 +159,9 @@ Introduction</span><a class=self-link href=#intro></a></h2>
 
 <p>It builds on earlier attempts to define better support for tab stops, such as http://www.w3.org/People/howcome/t/970224HTMLERB-CSS/WD-tabs-970117.html as well as existing specified behaviour such as "leaders" (LINK)</p>
 
-<p>New properties include <a class=property data-link-type=propdesc href=#propdef-tab-stops-positions0 title=tab-stops-positions>tab-stops-positions</a>, <a class=property data-link-type=propdesc title=tab-stops-alignments>tab-stops-alignments</a> and <a class=property data-link-type=propdesc title=tab-stops-leaders>tab-stops-leaders</a>, all of which can be grouped in the shorthand property: <a class=property data-link-type=propdesc title=tab-stops>tab-stops</a></p>
+<p>New properties include <a class=property data-link-type=propdesc href=#propdef-tab-stops-positions0 title=tab-stops-positions>tab-stops-positions</a>, <a class=property data-link-type=propdesc href=#propdef-tab-stops-alignments0 title=tab-stops-alignments>tab-stops-alignments</a> and <a class=property data-link-type=propdesc title=tab-stops-leaders>tab-stops-leaders</a>, all of which can be grouped in the shorthand property: <a class=property data-link-type=propdesc title=tab-stops>tab-stops</a></p>
+
+<p>TODO: need to explain all current definitions assume RTL and would obviously be swapped in LTR languages.</p>
 
 
 <h2 class="heading settled heading" data-level=2 id=tab-stops-positions><span class=secno>2 </span><span class=content>
@@ -178,29 +176,76 @@ Tab Stop positions: the <a class=property data-link-type=propdesc href=#propdef-
       <p>
         <pre><p></p>
 HTML:
-...Lorem ipsum(U+0009)dolor sit amet, consectetur(U+0009)adipisicing(U+0009)elit, sed
+Lorem ipsum(U+0009)dolor sit amet, consectetur(U+0009)adipisicing(U+0009)elit, sed
 
 CSS:
 p {
-  tab-size: 8,
+  tab-size: 8;
   tab-stops-positions: 4cm, 10cm
 }
 
 Result:
 0cm               4cm                            10cm       | 8 spaces |
-...Lorem ipsum    dolor sit amet, consectetur    adipisicing            elit, sed
+Lorem ipsum       dolor sit amet, consectetur    adipisicing            elit, sed
 </pre>
   </div>
 
 <h2 class="heading settled heading" data-level=3 id=tab-stops-alignments><span class=secno>3 </span><span class=content>
-Tab Stop alignments: the <a class=property data-link-type=propdesc title=tab-stops-alignments>tab-stops-alignments</a> property</span><a class=self-link href=#tab-stops-alignments></a></h2>
+Tab Stop alignments: the <a class=property data-link-type=propdesc href=#propdef-tab-stops-alignments0 title=tab-stops-alignments>tab-stops-alignments</a> property</span><a class=self-link href=#tab-stops-alignments></a></h2>
 
-<p>lala</p>
+<p>The direction of the text at every tab stop can be set with the <a class=property data-link-type=propdesc href=#propdef-tab-stops-alignments0 title=tab-stops-alignments>tab-stops-alignments</a> property. For specifics on how the various different alignments interact with one another, see the rules (LINK)</p>
+
+<table class="definition propdef"><tr><th>Name:<td><dfn class=css-code data-dfn-type=property data-export="" id=propdef-tab-stops-alignments0>tab-stops-alignments<a class=self-link href=#propdef-tab-stops-alignments0></a></dfn><tr><th>Value:<td class=prod>[ right <a class=prod-punc data-link-type=grammar href=http://dev.w3.org/csswg/css-values-3/#comb-one title=|>|</a> center <a class=prod-punc data-link-type=grammar href=http://dev.w3.org/csswg/css-values-3/#comb-one title=|>|</a> left]<a class=prod-punc data-link-type=grammar href=http://dev.w3.org/csswg/css-values-3/#mult-zero-plus title=*>*</a><a class=prod-punc data-link-type=grammar href=http://dev.w3.org/csswg/css-values-3/#comb-comma title=,>,</a> right <a class=prod-punc data-link-type=grammar href=http://dev.w3.org/csswg/css-values-3/#comb-one title=|>|</a> center <a class=prod-punc data-link-type=grammar href=http://dev.w3.org/csswg/css-values-3/#comb-one title=|>|</a> left<tr><th>Initial:<td>left<tr><th>Applies to:<td>block containers<tr><th>Inherited:<td>yes<tr><th>Media:<td>visual<tr><th>Computed value:<td>n/a<tr><th>Canonical order:<td>per grammar<tr><th>Percentages:<td>n/a<tr><th>Animatable:<td>no</table>
+
+  <div class=examples>
+    <pre>HTML:
+Lorem ipsum(U+0009)dolor sit amet, consectetur(U+0009)adipisicing
+
+CSS:
+p {
+  tab-stops-positions: 1cm, 5cm, 8cm;
+  tab-stops-alignments: left, center, right;
+}
+
+Result:
+0cm                                5cm                                    8cm
+Lorem ipsum            dolor sit amet, consectetur                adipisicing
+
+</pre>
+  <div>
+
+
 
 <h2 class="heading settled heading" data-level=4 id=tab-stops-leaders><span class=secno>4 </span><span class=content>
 Tab Stop leaders: the <a class=property data-link-type=propdesc title=tab-stops-leaders>tab-stops-leaders</a> property</span><a class=self-link href=#tab-stops-leaders></a></h2>
 
-<p>lala</p>
+<p>Each tab-stop can have tab leader. This is a repeating pattern of text used to connect content across horizontal spaces. This functionality is already defined here http://dev.w3.org/csswg/css-gcpm/#leaders but this new <a class=property data-link-type=propdesc title=tab-stops-leaders>tab-stops-leaders</a> property allows the author to apply the same concepts to actual tabs</p>
+
+<table class="definition propdef"><tr><th>Name:<td><dfn class=css-code data-dfn-type=property data-export="" id=propdef-tab-stops-alignments>tab-stops-alignments<a class=self-link href=#propdef-tab-stops-alignments></a></dfn><tr><th>Value:<td class=prod>[ &lt;string&gt;]<a class=prod-punc data-link-type=grammar href=http://dev.w3.org/csswg/css-values-3/#mult-zero-plus title=*>*</a><a class=prod-punc data-link-type=grammar href=http://dev.w3.org/csswg/css-values-3/#comb-comma title=,>,</a> &lt;string&gt;<tr><th>Initial:<td>None<tr><th>Applies to:<td>block containers<tr><th>Inherited:<td>yes<tr><th>Media:<td>visual<tr><th>Computed value:<td>n/a<tr><th>Canonical order:<td>per grammar<tr><th>Percentages:<td>n/a<tr><th>Animatable:<td>no</table>
+
+  <div class=examples>
+    <pre>HTML:
+&lt;p&gt;
+  Name:(U+0009)John Doe&lt;br&gt;
+  Address:(U+0009)44 Somestreet&lt;br&gt;
+  Country:(U+0009)United Kingdom&lt;br&gt;
+&lt;/p&gt;
+
+CSS:
+p {
+  tab-stops-positions: 10cm;
+  tab-stops-alignments: right;
+  tab-stops-leaders: "_"
+}
+
+Result:
+0cm                                10cm
+Name:__________________________John Doe
+Address:__________________44 Somestreet
+Country:_________________United Kingdom
+
+</pre>
+  <div>
 
 
 <h2 class="heading settled heading" data-level=5 id=tab-stops><span class=secno>5 </span><span class=content>
@@ -227,130 +272,29 @@ Shorthand property: <a class=property data-link-type=propdesc title=tab-stops>ta
 <h2 class="heading settled heading" data-level=6 id="tab stop rules"><span class=secno>6 </span><span class=content>
 Tab Stop Rules</span><a class=self-link href=#tab%20stop%20rules></a></h2>
 
-<p>TODO: CSS Text Module L3 doesn’t actually define the behaviour of how tabs are rendered. Add basic tab stop definition and rules here; eg when and how does text "jump" from one tab stop to the next. Specifically include rules for aligned tab stops!</p>
+<p>The following rules should be followed when rendering content that contains one or more tab characters (U+0009).</p>
 
+<p>basic rules (note, these rules extend the basic tab stop behaviour as defined in http://dev.w3.org/csswg/css-text-3/#white-space-phase-2):
+  <ol>
+  <li> tab positions are defined as positions on each text line of a block container</li>
+  <li> tab positions are defined for the block container by <a class=property data-link-type=propdesc href=#propdef-tab-stops-positions0 title=tab-stops-positions>tab-stops-positions</a></li>
+  <li> after the last tab-stop, further tab-stops are placed at every <a class=property data-link-type=propdesc href=http://dev.w3.org/csswg/css-text-3/#propdef-tab-size title=tab-size>tab-size</a> position repeatedly until the end of the line</li>
+  <li> the content up to the first TAB CHARACTER (U+0009) is rendered as normal, and can surpass one or more of these tab stop positions</li>
+  <li> at EACH tab character, the remaining text on the line will be rendered at "the next available" tab position</li>
+  <li> if the tab-stop in question has a leader string set, the space between the previous text and the moved text is filled by repeating the leader string pattern</li>
+  <li> if the tab-stop in question has an alignment set, the text at that tap-stop will flow in the direction of said alignment.</li>
+  </ol><p></p>
 
-
-<h2 class="heading settled heading" data-level=7 id=sample-topic><span class=secno>7 </span><span class=content>
-Sample section</span><a class=self-link href=#sample-topic></a></h2>
-
-<p>Look at the mark-up in this section for examples.
-  See the <a href=https://www.w3.org/Style/Group/css3-src/bin/README>documentation</a> for more precise instructions.
-  The companion of this template shows the <a href=Overview.html>processed result</a>.</p>
-
-<p>To refer to HTML, use <a data-biblio-type=informative data-link-type=biblio href=#biblio-html40 title=biblio-html40>[HTML40]</a> (note the double square brackets).
-  To make a normative reference,
-  insert a “!”, like this:
-  <a data-biblio-type=normative data-link-type=biblio href=#biblio-css3syn title=biblio-css3syn>[CSS3SYN]</a>
-  The currently available <a href=https://www.w3.org/Style/Group/css3-src/biblio.ref>list of bibliographic data</a> can of course be extended.</p>
-
-<p>We write about a property such as <a class=property data-link-type=propdesc href=#propdef-foo title=foo>foo</a> like this
-  and about a piece of CSS code like this: <a class=css data-link-type=propdesc href=#propdef-foo title=foo>foo: bar</a>.
-  (Note that if it looks like a "property: value",
-  it’ll automatically link to the property.)
-  Inline HTML and XML are similar,
-  but use the CODE element: <code class=html>&lt;blockquote&gt;...&lt;/blockquote&gt;</code>
-  and <code class=xml>&lt;r:xyz&gt;...&lt;/r:xyz&gt;</code>.</p>
-
-<p class=note>Note: Note that the property will automatically be linked to its definition.</p>
-
-<p>To define <dfn data-dfn-type=dfn data-noexport="" id=terms>terms<a class=self-link href=#terms></a></dfn> into the <dfn data-dfn-type=dfn data-noexport="" id=index0>index<a class=self-link href=#index0></a></dfn>,
-  there are many <dfn data-dfn-type=dfn data-noexport="" id=variant title=variant>variants<a class=self-link href=#variant></a></dfn>,
-  but hopefully the <dfn data-dfn-type=dfn data-noexport="" id=simple title=simple|simpler|simplest>simplest<a class=self-link href=#simple></a></dfn>
-  will be the most common.</p>
-
-<p class=note>Note: Note that you can add non-normative notes like this.</p>
-
-<p>Of course, multi-paragraph notes are also possible: just enclose them in a <a data-link-type=element href=http://www.w3.org/html/wg/drafts/html/CR/grouping-content.html#the-div-element title=div>div</a>:</p>
-
-  <div class=note>
-    Note that this note is a multi-paragraph note.
-
-<p>It doesn’t <em>need</em> to have two paragraphs, but it could.</p>
-  </div>
-
-<p>Displayed examples come in eight different types:
-  CSS examples that need no separate paragraph of explanation are put in a simple PRE:</p>
-
-  <pre class=example>EM { font-style: italic }
-</pre>
-
-<p>CSS examples that need extra text need a DIV.</p>
-
-  <div class=example>
-    The following example is the same as the previous one,
-    but now it is explained:
-
-<pre>EM { font-style: italic }</pre>
-  </div>
-
-<p>Illegal CSS examples (examples of errors) are the same,
-  but with class "illegal example".
-  Examples of HTML and XML code have class "html" and "xml"respectively,
-  but are otherwise ditto.</p>
-
-<p>A formal definition of a property looks like this:</p>
-
-<h3 class="heading settled heading" data-level=7.1 id=the-display-model><span class=secno>7.1 </span><span class=content>
-Internal display model: the <a class=property data-link-type=propdesc href=http://dev.w3.org/csswg/css-display-3/#propdef-display-inside title=display-inside>display-inside</a> property</span><a class=self-link href=#the-display-model></a></h3>
-
-<table class="definition propdef"><tr><th>Name:<td><dfn class=css-code data-dfn-type=property data-export="" id=propdef-foo>foo<a class=self-link href=#propdef-foo></a></dfn><tr><th>Value:<td class=prod>inline-inside <a class=prod-punc data-link-type=grammar href=http://dev.w3.org/csswg/css-values-3/#comb-one title=|>|</a> block-inside <a class=prod-punc data-link-type=grammar href=http://dev.w3.org/csswg/css-values-3/#comb-one title=|>|</a> table <a class=prod-punc data-link-type=grammar href=http://dev.w3.org/csswg/css-values-3/#comb-one title=|>|</a> ruby <a class=prod-punc data-link-type=grammar href=http://dev.w3.org/csswg/css-values-3/#comb-one title=|>|</a> icon<tr><th>Initial:<td>text<tr><th>Applies to:<td>all elements<tr><th>Inherited:<td>no<tr><th>Media:<td>visual<tr><th>Computed value:<td>specified value<tr><th>Canonical order:<td>per grammar<tr><th>Percentages:<td>n/a<tr><th>Animatable:<td>no</table>
-
-  <dl data-dfn-for=foo data-dfn-type=value>
-    <dt><dfn class=css-code data-dfn-for=foo data-dfn-type=value data-export="" id=valuedef-value-name>value-name<a class=self-link href=#valuedef-value-name></a></dfn>
-    <dd>
-      Define values using a <a data-link-type=element href=http://www.w3.org/html/wg/drafts/html/CR/grouping-content.html#the-dl-element title=dl>dl</a>.
-      Note that the <a data-link-type=element href=http://www.w3.org/html/wg/drafts/html/CR/grouping-content.html#the-dl-element title=dl>dl</a> wrapper
-      specifies the default <a data-link-type=element href=http://www.w3.org/html/wg/drafts/html/CR/text-level-semantics.html#the-dfn-element title=dfn>dfn</a> type and what property it’s for,
-      so you don’t have to repeat that information in each individual definition.
-  </dl>
-
-<p><dfn data-dfn-type=dfn data-noexport="" id=cross-references>Cross-references<a class=self-link href=#cross-references></a></dfn> are created by enclosing a term or phrase in &lt;dfn&gt;
-  (like the word <a data-link-type=dfn href=#cross-references title=cross-references>cross-references</a> earlier in this sentence).
-  Then an &lt;a&gt; without an <code>href=''</code> attribute
-  with the same text content will automatically be linked.
-  Both &lt;dfn&gt;s and &lt;a&gt;s are typed,
-  which allows the same text to appear as different types of terms without a collision.
-  The type can often be inferred,
-  but sometimes it needs to be specified,
-  like when you’re linking to a <a class=idl-code data-link-type=interface href=#dom-foo title=foo>Foo</a> WebIDL interface.</p>
-
-<p>And a figure with a caption is done like this:</p>
-
-  <figure>
-    <img alt="A table with a caption above it; both have margins and the margins between them are collapsed, as is normal for vertical margins." src=corner.png>
-
-    <figcaption>
-      Just a random image.
-      Use SVG if you can.
-      Otherwise, W3C prefers PNG over GIF (obviously, since PNG is a W3C Rec).
-    </figcaption>
-  </figure>
-
-<p>Don’t forget to write the alt.</p>
-
-  <p class=issue id=issue-122077cb><a class=self-link href=#issue-122077cb></a>
-    An open issue or editorial remark is OK in a WD,
-    but they should be resolved/removed before the document goes to “CR”
-    (Candidate Recommendation).
-    Use class=“issue”.
-
-  <p class=issue id=issue-f1352856><a class=self-link href=#issue-f1352856></a>
-    Inline issues will be copied into an <a href=#issues-index>Issues Index</a> at the end of the document,
-    for easy reference.
-
-  <pre class=idl>/* Write WebIDL in a &lt;pre class="idl"&gt; as plain text. */
-interface <dfn class=idl-code data-dfn-type=interface data-export="" data-global-name="" id=dom-foo>Foo<a class=self-link href=#dom-foo></a></dfn> {
-  readonly attribute DOMString <dfn class=idl-code data-dfn-for=Foo data-dfn-type=attribute data-export="" data-global-name="Foo<interface>/bar<attribute>" data-readonly="" data-type="DOMString " id=dom-foo-bar>bar<a class=self-link href=#dom-foo-bar></a></dfn>;
-  boolean <dfn class=idl-code data-dfn-for=Foo data-dfn-type=method data-export="" data-global-name="Foo<interface>/baz()<method>" id=dom-foo-baz title=baz()>baz<a class=self-link href=#dom-foo-baz></a></dfn>(<a data-link-type=idl href=#dictdef-foodict title=foodict>FooDict</a> <dfn class=idl-code data-dfn-for=Foo/baz() data-dfn-type=argument data-export="" data-global-name="Foo<interface>/baz()<method>/arg1<argument>" id=dom-foobaz-arg1>Arg1<a class=self-link href=#dom-foobaz-arg1></a></dfn>, (DOMString or <a data-link-type=idl href=#dom-foo title=foo>Foo</a>) <dfn class=idl-code data-dfn-for=Foo/baz() data-dfn-type=argument data-export="" data-global-name="Foo<interface>/baz()<method>/arg2<argument>" id=dom-foobaz-arg2>Arg2<a class=self-link href=#dom-foobaz-arg2></a></dfn>);
-};
-
-dictionary <dfn class=idl-code data-dfn-type=dictionary data-export="" data-global-name="" id=dictdef-foodict>FooDict<a class=self-link href=#dictdef-foodict></a></dfn> {
-  sequence&lt;<a data-link-type=idl href=#dom-foo title=foo>Foo</a>&gt; <dfn class=idl-code data-dfn-for=FooDict data-dfn-type=dict-member data-export="" data-global-name="FooDict<dictionary>/foo<dict-member>" id=dom-foodict-foo>foo<a class=self-link href=#dom-foodict-foo></a></dfn>;
-  boolean <dfn class=idl-code data-dfn-for=FooDict data-dfn-type=dict-member data-export="" data-global-name="FooDict<dictionary>/bar<dict-member>" id=dom-foodict-bar>bar<a class=self-link href=#dom-foodict-bar></a></dfn>;
-  DOMString <dfn class=idl-code data-dfn-for=FooDict data-dfn-type=dict-member data-export="" data-global-name="FooDict<dictionary>/baz<dict-member>" id=dom-foodict-baz>baz<a class=self-link href=#dom-foodict-baz></a></dfn> = "qux";
-};
-</pre>
+<p>rules for alignment:
+  TODO: "grow" is not the right word here... reword
+  <ol>
+  <li> text for a center aligned tab-stop should grow in both directions from the tab-stop position</li>
+  <li> text for a right aligned tab-stop should grow to the left of the tab-stop position</li>
+  <li> if the text can not grow further to the left because it’s reached either existing text or the edge of the container, it should stop growing to the left. Further text should continue to grow to the right</li>
+  <li> when text grows to the right and it reach existing text, that text will be pushed to the right. This can mean that it automatically moves to the next available tab stop (this is standard behaviour because of basic rule 4 &amp; 5 above; the tab character effectively gets moved beyond its original tab stop)</li>
+  <li> if text reaches the right end of the container, it should wrap to the next line</li>
+  <li> standard wrap algorithms apply, thus if the text has now white-spaces, it should wrap at the tab character</li>
+  </ol><p></p>
 
 <h2 class="no-ref no-num heading settled heading" id=conformance><span class=content>
 Conformance</span><a class=self-link href=#conformance></a></h2>
@@ -478,57 +422,30 @@ References</span><a class=self-link href=#references></a></h2>
 <h3 class="no-num no-ref heading settled heading" id=normative><span class=content>
 Normative References</span><a class=self-link href=#normative></a></h3>
 <div data-fill-with=normative-references><dl>
-<dt id=biblio-css3syn title=CSS3SYN><a class=self-link href=#biblio-css3syn></a>[CSS3SYN]<dd>Tab Atkins Jr.; Simon Sapin. <a href=http://www.w3.org/TR/2013/WD-css-syntax-3-20131105/>CSS Syntax Module</a>. 5 November 2013. W3C Working Draft. (Work in progress.) URL: <a href=http://www.w3.org/TR/2013/WD-css-syntax-3-20131105/>http://www.w3.org/TR/2013/WD-css-syntax-3-20131105/</a></dd>
 <dt id=biblio-rfc2119 title=RFC2119><a class=self-link href=#biblio-rfc2119></a>[RFC2119]<dd>S. Bradner. <a href=http://www.ietf.org/rfc/rfc2119.txt>Key words for use in RFCs to Indicate Requirement Levels</a>. URL: <a href=http://www.ietf.org/rfc/rfc2119.txt>http://www.ietf.org/rfc/rfc2119.txt</a></dd>
 </dl></div>
 
 <h3 class="no-num no-ref heading settled heading" id=informative><span class=content>
 Informative References</span><a class=self-link href=#informative></a></h3>
 <div data-fill-with=informative-references><dl>
-<dt id=biblio-html40 title=HTML40><a class=self-link href=#biblio-html40></a>[HTML40]<dd>Ian Jacobs; David Raggett; Arnaud Le Hors. <a href=http://www.w3.org/TR/1998/REC-html40-19980424>HTML 4.0 Specification</a>. 24 April 1998. W3C Recommendation. URL: <a href=http://www.w3.org/TR/1998/REC-html40-19980424>http://www.w3.org/TR/1998/REC-html40-19980424</a></dd>
 </dl></div>
 
 <h2 class="no-num no-ref heading settled heading" id=index><span class=content>
 Index</span><a class=self-link href=#index></a></h2>
 <div data-fill-with=index><ul class=indexlist>
-<li>Arg1, <a href=#dom-foobaz-arg1 title="section 7.1">7.1</a>
-<li>Arg2, <a href=#dom-foobaz-arg2 title="section 7.1">7.1</a>
-<li>bar<ul><li>attribute for Foo, <a href=#dom-foo-bar title="section 7.1">7.1</a>
-<li>dict-member for FooDict, <a href=#dom-foodict-bar title="section 7.1">7.1</a>
-</ul><li>baz, <a href=#dom-foodict-baz title="section 7.1">7.1</a>
-<li>baz(), <a href=#dom-foo-baz title="section 7.1">7.1</a>
-<li>Cross-references, <a href=#cross-references title="section 7.1">7.1</a>
-<li>Foo, <a href=#dom-foo title="section 7.1">7.1</a>
-<li>foo<ul><li>(property), <a href=#propdef-foo title="section 7.1">7.1</a>
-<li>dict-member for FooDict, <a href=#dom-foodict-foo title="section 7.1">7.1</a>
-</ul><li>FooDict, <a href=#dictdef-foodict title="section 7.1">7.1</a>
-<li>index, <a href=#index0 title="section 7">7</a>
-<li>simple, <a href=#simple title="section 7">7</a>
-<li>simpler, <a href=#simple title="section 7">7</a>
-<li>simplest, <a href=#simple title="section 7">7</a>
-<li>tab-stops-positions<ul><li>(property), <a href=#propdef-tab-stops-positions0 title="section 2">2</a>
+<li>tab-stops-alignments<ul><li>(property), <a href=#propdef-tab-stops-alignments0 title="section 3">3</a>
+<li>(property), <a href=#propdef-tab-stops-alignments title="section 4">4</a>
+</ul><li>tab-stops-positions<ul><li>(property), <a href=#propdef-tab-stops-positions0 title="section 2">2</a>
 <li>(property), <a href=#propdef-tab-stops-positions title="section 5">5</a>
-</ul><li>terms, <a href=#terms title="section 7">7</a>
-<li>value-name, <a href=#valuedef-value-name title="section 7.1">7.1</a>
-<li>variant, <a href=#variant title="section 7">7</a>
-</ul></div>
+</ul></ul></div>
 
 <h2 class="no-num no-ref heading settled heading" id=property-index><span class=content>
 Property index</span><a class=self-link href=#property-index></a></h2>
 <div data-fill-with=property-index><table class="proptable data"><thead><tr><th scope=col>Name<th scope=col>Value<th scope=col>Initial<th scope=col>Applies to<th scope=col>Inh.<th scope=col>%ages<th scope=col>Media<th scope=col>Animatable<th scope=col>Canonical order<th scope=col>Computed value<tbody>
 <tr><th scope=row><a class=css-code data-link-type=property href=#propdef-tab-stops-positions0 title=tab-stops-positions>tab-stops-positions</a><td>[ &lt;integer&gt; | &lt;length&gt;, ]* &lt;integer&gt; | &lt;length&gt;<td>(none)<td>block containers<td>yes<td>n/a<td>visual<td>no<td>per grammar<td>the specified integer or length made absolute
-<tr><th scope=row><a class=css-code data-link-type=property href=#propdef-tab-stops-positions0 title=tab-stops-positions>tab-stops-positions</a><td>[ &lt;tab-stop-definition&gt;, ]* &lt;tab-stop-definition&gt;<td>see individual properties<td>block containers<td>yes<td>n/a<td>visual<td>see individual properties<td>per grammar<td>see individual properties
-<tr><th scope=row><a class=css-code data-link-type=property href=#propdef-foo title=foo>foo</a><td>inline-inside | block-inside | table | ruby | icon<td>text<td>all elements<td>no<td>n/a<td>visual<td>no<td>per grammar<td>specified value</table></div>
+<tr><th scope=row><a class=css-code data-link-type=property href=#propdef-tab-stops-alignments0 title=tab-stops-alignments>tab-stops-alignments</a><td>[ right | center | left]*, right | center | left<td>left<td>block containers<td>yes<td>n/a<td>visual<td>no<td>per grammar<td>n/a
+<tr><th scope=row><a class=css-code data-link-type=property href=#propdef-tab-stops-alignments0 title=tab-stops-alignments>tab-stops-alignments</a><td>[ &lt;string&gt;]*, &lt;string&gt;<td>None<td>block containers<td>yes<td>n/a<td>visual<td>no<td>per grammar<td>n/a
+<tr><th scope=row><a class=css-code data-link-type=property href=#propdef-tab-stops-positions0 title=tab-stops-positions>tab-stops-positions</a><td>[ &lt;tab-stop-definition&gt;, ]* &lt;tab-stop-definition&gt;<td>see individual properties<td>block containers<td>yes<td>n/a<td>visual<td>see individual properties<td>per grammar<td>see individual properties</table></div>
 
 
-</div></div><h2 class="no-num heading settled" id=issues-index><span class=content>Issues Index</span><a class=self-link href=#issues-index></a></h2><div style="counter-reset: issue"><div class=issue>
-    An open issue or editorial remark is OK in a WD,
-    but they should be resolved/removed before the document goes to “CR”
-    (Candidate Recommendation).
-    Use class=“issue”.
-
-  <a href=#issue-122077cb> ↵ </a></div><div class=issue>
-    Inline issues will be copied into an <a href=#issues-index>Issues Index</a> at the end of the document,
-    for easy reference.
-
-  <a href=#issue-f1352856> ↵ </a></div></div>
+</div></div></div></div></div></div>
