@@ -41,7 +41,9 @@ Introduction</h2>
 
   New properties include 'tab-stops-positions', 'tab-stops-alignments' and 'tab-stops-leaders', all of which can be grouped in the shorthand property: 'tab-stops'
 
-  TODO: need to explain all current definitions assume RTL and would obviously be swapped in LTR languages.
+  <div class="note">
+    TODO: need to explain all current definitions assume RTL and would obviously be swapped in LTR languages.
+  </div>
 
 
 <h2 id="tab-stops-positions">
@@ -62,7 +64,6 @@ Tab Stop positions: the 'tab-stops-positions' property</h2>
     Canonical order: per grammar
   </pre>
 
-  Example:
   <div class='example'>
       <p>
         <pre>
@@ -99,7 +100,7 @@ Tab Stop alignments: the 'tab-stops-alignments' property</h2>
     Canonical order: per grammar
   </pre>
 
-  <div class="examples">
+  <div class="example">
     <pre>
       HTML:
       Lorem ipsum(U+0009)dolor sit amet, consectetur(U+0009)adipisicing
@@ -115,7 +116,7 @@ Tab Stop alignments: the 'tab-stops-alignments' property</h2>
       Lorem ipsum            dolor sit amet, consectetur                adipisicing
 
     </pre>
-  <div>
+  </div>
 
 
 
@@ -137,7 +138,7 @@ Tab Stop leaders: the 'tab-stops-leaders' property</h2>
     Canonical order: per grammar
   </pre>
 
-  <div class="examples">
+  <div class="example">
     <pre>
       HTML:
       &lt;p&gt;
@@ -160,7 +161,7 @@ Tab Stop leaders: the 'tab-stops-leaders' property</h2>
       Country:_________________United Kingdom
 
     </pre>
-  <div>
+  </div>
 
 
 <h2 id="tab-stops">
@@ -188,13 +189,13 @@ Shorthand property: 'tab-stops'</h2>
     </i>
 
 
-  <div class="examples">
+  <div class="example">
     <pre>
       p {
         tab-stops: 1cm, 2cm, 3cm, 4cm, 5cm, 6cm, center 10cm, right 11cm, dotted right 15cm
       }
     </pre>
-  <div>
+  </div>
 
 <h2 id="tab stop rules">
 Tab Stop Rules</h2>
@@ -214,7 +215,9 @@ Tab Stop Rules</h2>
   </ol>
 
   <h3>rules for alignment</h3>
-  TODO: "grow" is not the right word here... reword
+  <div class="note">
+    TODO: "grow" is not the right word here... reword
+  </div>
   <ol>
   <li> text for a center aligned tab-stop should grow in both directions from the tab-stop position</li>
   <li> text for a right aligned tab-stop should grow to the left of the tab-stop position</li>

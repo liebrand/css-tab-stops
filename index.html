@@ -619,7 +619,9 @@ Introduction</span><a class=self-link href=#intro></a></h2>
 
 <p>New properties include <a class=property data-link-type=propdesc href=#propdef-tab-stops-positions0 title=tab-stops-positions>tab-stops-positions</a>, <a class=property data-link-type=propdesc href=#propdef-tab-stops-alignments0 title=tab-stops-alignments>tab-stops-alignments</a> and <a class=property data-link-type=propdesc title=tab-stops-leaders>tab-stops-leaders</a>, all of which can be grouped in the shorthand property: <a class=property data-link-type=propdesc title=tab-stops>tab-stops</a></p>
 
-<p>TODO: need to explain all current definitions assume RTL and would obviously be swapped in LTR languages.</p>
+  <div class=note>
+    TODO: need to explain all current definitions assume RTL and would obviously be swapped in LTR languages.
+  </div>
 
 
 <h2 class="heading settled heading" data-level=2 id=tab-stops-positions><span class=secno>2 </span><span class=content>
@@ -629,11 +631,9 @@ Tab Stop positions: the <a class=property data-link-type=propdesc href=#propdef-
 
 <table class="definition propdef"><tr><th>Name:<td><dfn class=css-code data-dfn-type=property data-export="" id=propdef-tab-stops-positions0>tab-stops-positions<a class=self-link href=#propdef-tab-stops-positions0></a></dfn><tr><th>Value:<td class=prod>[ &lt;integer&gt; <a class=prod-punc data-link-type=grammar href=http://dev.w3.org/csswg/css-values-3/#comb-one title=|>|</a> &lt;length&gt;<a class=prod-punc data-link-type=grammar href=http://dev.w3.org/csswg/css-values-3/#comb-comma title=,>,</a> ]<a class=prod-punc data-link-type=grammar href=http://dev.w3.org/csswg/css-values-3/#mult-zero-plus title=*>*</a> &lt;integer&gt; <a class=prod-punc data-link-type=grammar href=http://dev.w3.org/csswg/css-values-3/#comb-one title=|>|</a> &lt;length&gt;<tr><th>Initial:<td>(none)<tr><th>Applies to:<td>block containers<tr><th>Inherited:<td>yes<tr><th>Media:<td>visual<tr><th>Computed value:<td>the specified integer or length made absolute<tr><th>Canonical order:<td>per grammar<tr><th>Percentages:<td>n/a<tr><th>Animatable:<td>no</table>
 
-<p>Example:
   <div class=example>
       <p>
-        <pre><p></p>
-HTML:
+        <pre>HTML:
 Lorem ipsum(U+0009)dolor sit amet, consectetur(U+0009)adipisicing(U+0009)elit, sed
 
 CSS:
@@ -655,7 +655,7 @@ Tab Stop alignments: the <a class=property data-link-type=propdesc href=#propdef
 
 <table class="definition propdef"><tr><th>Name:<td><dfn class=css-code data-dfn-type=property data-export="" id=propdef-tab-stops-alignments0>tab-stops-alignments<a class=self-link href=#propdef-tab-stops-alignments0></a></dfn><tr><th>Value:<td class=prod>[ right <a class=prod-punc data-link-type=grammar href=http://dev.w3.org/csswg/css-values-3/#comb-one title=|>|</a> center <a class=prod-punc data-link-type=grammar href=http://dev.w3.org/csswg/css-values-3/#comb-one title=|>|</a> left]<a class=prod-punc data-link-type=grammar href=http://dev.w3.org/csswg/css-values-3/#mult-zero-plus title=*>*</a><a class=prod-punc data-link-type=grammar href=http://dev.w3.org/csswg/css-values-3/#comb-comma title=,>,</a> right <a class=prod-punc data-link-type=grammar href=http://dev.w3.org/csswg/css-values-3/#comb-one title=|>|</a> center <a class=prod-punc data-link-type=grammar href=http://dev.w3.org/csswg/css-values-3/#comb-one title=|>|</a> left<tr><th>Initial:<td>left<tr><th>Applies to:<td>block containers<tr><th>Inherited:<td>yes<tr><th>Media:<td>visual<tr><th>Computed value:<td>n/a<tr><th>Canonical order:<td>per grammar<tr><th>Percentages:<td>n/a<tr><th>Animatable:<td>no</table>
 
-  <div class=examples>
+  <div class=example>
     <pre>HTML:
 Lorem ipsum(U+0009)dolor sit amet, consectetur(U+0009)adipisicing
 
@@ -670,7 +670,7 @@ Result:
 Lorem ipsum            dolor sit amet, consectetur                adipisicing
 
 </pre>
-  <div>
+  </div>
 
 
 
@@ -681,7 +681,7 @@ Tab Stop leaders: the <a class=property data-link-type=propdesc title=tab-stops-
 
 <table class="definition propdef"><tr><th>Name:<td><dfn class=css-code data-dfn-type=property data-export="" id=propdef-tab-stops-alignments>tab-stops-alignments<a class=self-link href=#propdef-tab-stops-alignments></a></dfn><tr><th>Value:<td class=prod>[ &lt;string&gt;]<a class=prod-punc data-link-type=grammar href=http://dev.w3.org/csswg/css-values-3/#mult-zero-plus title=*>*</a><a class=prod-punc data-link-type=grammar href=http://dev.w3.org/csswg/css-values-3/#comb-comma title=,>,</a> &lt;string&gt;<tr><th>Initial:<td>None<tr><th>Applies to:<td>block containers<tr><th>Inherited:<td>yes<tr><th>Media:<td>visual<tr><th>Computed value:<td>n/a<tr><th>Canonical order:<td>per grammar<tr><th>Percentages:<td>n/a<tr><th>Animatable:<td>no</table>
 
-  <div class=examples>
+  <div class=example>
     <pre>HTML:
 &lt;p&gt;
   Name:(U+0009)John Doe&lt;br&gt;
@@ -703,7 +703,7 @@ Address:__________________44 Somestreet
 Country:_________________United Kingdom
 
 </pre>
-  <div>
+  </div>
 
 
 <h2 class="heading settled heading" data-level=5 id=tab-stops><span class=secno>5 </span><span class=content>
@@ -720,12 +720,12 @@ Shorthand property: <a class=property data-link-type=propdesc title=tab-stops>ta
     </i></p>
 
 
-  <div class=examples>
+  <div class=example>
     <pre>p {
   tab-stops: 1cm, 2cm, 3cm, 4cm, 5cm, 6cm, center 10cm, right 11cm, dotted right 15cm
 }
 </pre>
-  <div>
+  </div>
 
 <h2 class="heading settled heading" data-level=6 id="tab stop rules"><span class=secno>6 </span><span class=content>
 Tab Stop Rules</span><a class=self-link href=#tab%20stop%20rules></a></h2>
@@ -745,7 +745,9 @@ Tab Stop Rules</span><a class=self-link href=#tab%20stop%20rules></a></h2>
   </ol>
 
   <h3 class="heading settled heading" data-level=6.2 id=rules-for-alignment><span class=secno>6.2 </span><span class=content>rules for alignment</span><a class=self-link href=#rules-for-alignment></a></h3>
-  TODO: "grow" is not the right word here... reword
+  <div class=note>
+    TODO: "grow" is not the right word here... reword
+  </div>
   <ol>
   <li> text for a center aligned tab-stop should grow in both directions from the tab-stop position</li>
   <li> text for a right aligned tab-stop should grow to the left of the tab-stop position</li>
@@ -821,4 +823,3 @@ Property index</span><a class=self-link href=#property-index></a></h2>
 
 
 
-</div></div></div></div></div></div>
