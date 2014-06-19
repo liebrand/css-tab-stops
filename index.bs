@@ -4,7 +4,6 @@
 Shortname: css-tab-stops
 Level: 1
 Status: ED
-Group: csswg
 TR: http://www.w3.org/TR/css-tab-stops/
 ED: http://dev.w3.org/csswg/css-tab-stops/
 Editor: Jelte Liebrand, Google, http://example.com/contact
